@@ -1,13 +1,13 @@
 <?php
 
-namespace Phalcon\Feedwall\Exception;
+namespace Baka\Feeds\Exception;
 
 /**
- * Phalcon\Feedwall\Exception\InvalidArgumentException
+ * Baka\Feeds\Exception\InvalidArgumentException
  *
- * Exceptions thrown in Phalcon\Feedwall will use this class
+ * Exceptions thrown in Baka\Feeds will use this class
  *
- * @package Phalcon\Feedwall\Exception
+ * @package Baka\Feeds\Exception
  */
 class InvalidArgumentException extends \InvalidArgumentException
 {

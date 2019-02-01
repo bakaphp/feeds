@@ -1,57 +1,62 @@
 <?php
 
-namespace Phalcon\Feedwall;
+namespace Baka\Feeds;
 
-use Phalcon\Feedwall\Exception\InvalidArgumentException;
+use Baka\Feeds\Exception\InvalidArgumentException;
 
 
 /**
  * \Phalcon\messages
  *
- * Class for the feedwall module component.
+ * Class for the feeds module component.
  *
  * @package Phalcon
  */
-class Tags extends Feedwall
+class Resource extends Feeds
 {
-    /**
-     * The current message ID.
-     *
-     * @var string
-     */
-    protected static $messageId;
 
-    /**
-     * Tags array.
-     *
-     * @var string
-     */
-    protected static $tags;
+    protected static $message_id;
+
+    protected static $comments_id;
+
+    protected static $media_resources_id;
 
 
-    /**
-     * Feedwall constructor.
-     */
-    public function __construct($messageId)
+
+
+
+
+    public function __construct()
     {
-        static::$messageId = $messageId;
     }
 
 
+
+
     /**
      *
-     * Add a tag.
+     * get message context to transforn it depending of the type.
      *
-     * @param string $messageId    message item identifier.
-     * @param string $tag ".
-     *
-     * @throws \InvalidArgumentException
+     * @param string $message       message text.
+     * @param string $type   type of message.
      *
      * @return \Response
      */
-    protected function add($messageId, $tag) : ?string
+    public function context($message, $type) : ?string
     {
+        $context = "";
 
+        switch ($type) {
+            case "text":
+                $context = $message;
+                break;
+            case "call":
+                // build a call context
+                break;
+
+        }
+
+        return $context;
 
     }
 

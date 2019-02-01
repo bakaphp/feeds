@@ -1,17 +1,17 @@
 <?php
 
-namespace Phalcon\Feedwall;
+namespace Baka\Feeds;
 
-use Phalcon\Feedwall\Exception\InvalidArgumentException;
+use Baka\Feeds\Exception\InvalidArgumentException;
 
 /**
- * \Phalcon\feedwall
+ * \Phalcon\feeds
  *
- * Class for the feedwall module component.
+ * Class for the feeds module component.
  *
  * @package Phalcon
  */
-class FeedwallReactions extends Feedwall
+class FeedsReactions extends Feeds
 {
 
     /**
@@ -23,7 +23,7 @@ class FeedwallReactions extends Feedwall
 
 
     /**
-     * Feedwall constructor.
+     * Feeds constructor.
      */
     public function __construct($reactionId)
     {

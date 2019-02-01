@@ -1,5 +1,5 @@
-# Phalcon Feedwall 
-Phalcon Feedwall is a Feed module component for Phalcon.
+# Phalcon Feeds 
+Phalcon Feeds is a Feed module component for Phalcon.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ Phalcon Feedwall is a Feed module component for Phalcon.
 If you have Composer [globally installed](https://getcomposer.org/doc/00-intro.md#globally), this command will suffice:
 
 ```sh
-$ composer require angelleger/feedwall 
+$ composer require angelleger/feeds 
 ```
 
 Otherwise, install Composer in a common location or in your project:
@@ -30,7 +30,7 @@ Create the `composer.json` file as follows:
 ```json
 {
     "require": {
-        "angelleger/feedwall": "^1.3"
+        "angelleger/feeds": "^1.3"
     }
 }
 ```
@@ -45,9 +45,9 @@ $ php composer.phar install
 
 ## Copyright
 
-Phalcon Feedwall is open-sourced software licensed under the [New BSD License][:license:].
+Phalcon Feeds is open-sourced software licensed under the [New BSD License][:license:].
 © Phalcon Team and contributors
 
 [:composer:]: https://getcomposer.org/
 [:phalcon:]: https://github.com/phalcon/cphalcon/
-[:license:]: https://github.com/angelleger/feedwall/blob/master/LICENSE.txt
+[:license:]: https://github.com/angelleger/feeds/blob/master/LICENSE.txt

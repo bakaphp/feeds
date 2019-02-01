@@ -3,22 +3,22 @@
 namespace Phalcon;
 
 
-use Phalcon\Feedwall\Exception\InvalidArgumentException;
+use Baka\Feeds\Exception\InvalidArgumentException;
 
 
 /**
  * \Phalcon\comments
  *
- * Class for the feedwall module component.
+ * Class for the feeds module component.
  *
  * @package Phalcon
  */
-class Comments extends Feedwall
+class Comment extends Feeds
 {
 
 
     /**
-     * Feedwall constructor.
+     * Feeds constructor.
      */
     public function __construct()
     {

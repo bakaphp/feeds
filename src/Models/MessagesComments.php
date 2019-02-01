@@ -1,12 +1,12 @@
 <?php
 
-namespace Phalcon\Feedwall;
+namespace Baka\Feeds;
 
 /**
  * this are the userFeeds related to user_messages
  *
  */
-class Message extends \Phalcon\Mvc\Model
+class MessagesComments extends \Phalcon\Mvc\Model
 {
 
 
@@ -14,7 +14,7 @@ class Message extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $app_id;
+    public $apps_id;
 
     /**
      *
@@ -26,20 +26,26 @@ class Message extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $messages_id;
+    public $message_id;
 
     /**
      *
      * @var integer
      */
-    public $comments_id;
+    public $user_id;
 
     /**
      *
      * @var text
      */
-    public $media_resources_id;
+    public $content;
 
+    /**
+     *
+     * @var integer
+     */
+    public $reactions_count;
+    
     /**
      *
      * @var string
@@ -53,7 +59,6 @@ class Message extends \Phalcon\Mvc\Model
     {
 
     }
-
 
     public function save($message){
 

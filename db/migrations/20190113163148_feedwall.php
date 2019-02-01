@@ -3,7 +3,7 @@
 use Phinx\Migration\AbstractMigration;
 use Phinx\Db\Adapter\MysqlAdapter;
 
-class Feedwall extends AbstractMigration
+class Feeds extends AbstractMigration
 {
     public function change()
     {
