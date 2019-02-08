@@ -2,16 +2,17 @@
 
 namespace Baka\Feeds\Models;
 
-use Baka\Database\Model;
+
+use Gewaer\Models\Users;
 use Phalcon\Validation;
-use Exception;
+use Baka\Database\Model;
 use Phalcon\Validation\Validator\PresenceOf;
 
 /**
  * this are the userFeeds related to user_messages
  *
  */
-class Messages extends Model
+class Messages extends \Phalcon\Mvc\Model
 {
 
 
@@ -48,7 +49,7 @@ class Messages extends Model
      *
      * @var string
      */
-    private $content;
+    private $context;
 
     /**
      * The count of reactions in the message
@@ -67,44 +68,18 @@ class Messages extends Model
     /**
      *
      * @var string
-     * @Column(type="string", nullable=true)
      */
     public $created_at;
-    /**
-     *
-     * @var string
-     * @Column(type="string", nullable=true)
-     */
-    public $updated_at;
-    /**
-     *
-     * @var integer
-     * @Column(type="integer", length=11, nullable=true)
-     */
-    public $is_deleted;
 
-    /**
-     * initilize the model
-     */
-    public function initialize()
+
+
+    public function add(Users $user, array $request): Messages
     {
 
-    }
-
-
-    /**
-     * Save new message with given request
-     *
-     * @param  array $user
-     * @param  array $message
-     * @return Message
-     */
-    public static function add(Users $user, array $request): Messages
-    {
         // Validating post request
         $validation = new Validation();
         $validation->add('type', new PresenceOf(['message' => _('The type is required.')]));
-        $validation->add('messageText', new PresenceOf(['message' => _('The messageText is required.')]));
+        $validation->add('message', new PresenceOf(['message' => _('The message is required.')]));
 
         $exceptions = $validation->validate($request);
         if (count($exceptions)) {
@@ -114,17 +89,18 @@ class Messages extends Model
         }
 
         $message = new self();
-        $message->companies_id = $user->getId();
-        $message->users_id =  $user->user_id();
-        $message->message_types_id = $message['type'];
-        $message->content = $request['messageText'];
+        $message->content =  $request['message'];
+        $message->message_types_id =  $request['type'];
+        $message->users_id = $user->getId();
+        $message->companies_id = $user->currentCompanyId();
+        $message->apps_id = $user->currentCompanyId();
 
-        // saving post request
         if (!$message->save()) {
             throw new Exception(current($message->getMessages()));
         }
 
         return $message;
+
     }
 
 
