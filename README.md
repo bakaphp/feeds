@@ -1,5 +1,5 @@
-# Phalcon Feeds 
-Phalcon Feeds is a Feed module component for Phalcon.
+# Phalcon feedswall 
+Phalcon feedswall is a feeds module component for Phalcon.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ Phalcon Feeds is a Feed module component for Phalcon.
 If you have Composer [globally installed](https://getcomposer.org/doc/00-intro.md#globally), this command will suffice:
 
 ```sh
-$ composer require angelleger/feeds 
+$ composer require baka/feeds 
 ```
 
 Otherwise, install Composer in a common location or in your project:
@@ -30,7 +30,7 @@ Create the `composer.json` file as follows:
 ```json
 {
     "require": {
-        "angelleger/feeds": "^1.3"
+        "baka/feeds": "^1.3"
     }
 }
 ```
@@ -45,7 +45,7 @@ $ php composer.phar install
 
 ## Copyright
 
-Phalcon Feeds is open-sourced software licensed under the [New BSD License][:license:].
+Phalcon feeds is open-sourced software licensed under the [New BSD License][:license:].
 © Phalcon Team and contributors
 
 [:composer:]: https://getcomposer.org/
