@@ -3,6 +3,7 @@
 namespace Baka\Feeds\Models;
 
 use Gewaer\Models\Users;
+use Phalcon\Validation;
 
 /**
  * this are the userFeeds related to user_messages
