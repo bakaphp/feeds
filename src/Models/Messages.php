@@ -5,8 +5,9 @@ namespace Baka\Feeds\Models;
 
 use Gewaer\Models\Users;
 use Phalcon\Validation;
-use Baka\Database\Model;
 use Phalcon\Validation\Validator\PresenceOf;
+use Exception;
+
 
 /**
  * this are the userFeeds related to user_messages
