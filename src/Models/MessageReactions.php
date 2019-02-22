@@ -6,7 +6,6 @@ use Gewaer\Models\Users;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\PresenceOf;
 use Exception;
-use phpDocumentor\Reflection\Types\Integer;
 
 
 /**
