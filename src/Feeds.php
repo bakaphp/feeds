@@ -4,9 +4,11 @@ namespace Baka\Feeds;
 
 
 use Baka\Feeds\Models\MessageComments;
+use Baka\Feeds\Models\MessageReactions;
 use Baka\Feeds\Models\MessageResources;
 use Baka\Feeds\Models\Messages as MessageModel;
 use Baka\Feeds\Models\MessageResources as MessageResourcesModel;
+
 
 
 /**
@@ -141,5 +143,29 @@ class Feeds
 
         return $response;
     }
+
+
+    /**
+     *
+     * Add a new reaction to a message in the feed.
+     *
+     * @param object $user object info.
+     * @param array $request[] post data.
+     *    $request = [
+     *      'messages_id'     => (integer) Message ID key. Required.
+     *      'comments_id' => (integer) Comment ID of the commentt. Required.
+     *      'reactions_id' => (integer) Reaction ID of the commentt. Required.
+     *    ]
+     *
+     * @return \Response
+     */
+    public function addReaction(object $user, array $request): ?object
+    {
+
+        $response = MessageReactions::add($user, $request);
+
+        return $response;
+    }
+
 
 }
